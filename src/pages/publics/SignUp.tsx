@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../hooks";
 import React, { useState, useEffect } from "react";
-import { requirements, validate } from "../../constants";
+import { REQUIREMENTS, VALIDATE } from "../../constants";
 
 export const SignUp = () => {
   const { authActions } = useAuth();
@@ -30,7 +30,7 @@ export const SignUp = () => {
 
   useEffect(() => {
     if (user.password.length > 0) {
-      setErrorMessage(validate(user.password));
+      setErrorMessage(VALIDATE(user.password));
     }
   }, [user.password]);
 
@@ -97,12 +97,12 @@ export const SignUp = () => {
             />
             {errorMessage && (
               <>
-                {requirements.map((requirements) => (
+                {REQUIREMENTS.map((REQUIREMENTS) => (
                   <p
                     className="text-red-500 text-xs italic"
-                    key={requirements.text}
+                    key={REQUIREMENTS.text}
                   >
-                    {requirements.text}
+                    {REQUIREMENTS.text}
                   </p>
                 ))}
               </>

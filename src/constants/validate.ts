@@ -1,6 +1,6 @@
 import validator from "validator";
 
-export const validate = (value: string) => {
+export const VALIDATE = (value: string) => {
   if (
     validator.isStrongPassword(value, {
       minLength: 8,

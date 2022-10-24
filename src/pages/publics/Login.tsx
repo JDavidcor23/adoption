@@ -24,13 +24,13 @@ export const Login = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col">
+    <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col m-0 overflow-hidden p-0">
       <img
         src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/leonidasesteban.com_sfkukc.png"
         alt=""
-        className="w-36"
+        className="w-36 animate-sideContent"
       />
-      <div className="w-full max-w-xs">
+      <div className="w-full max-w-xs animate-sideContent">
         <form
           className="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4"
           onSubmit={handleSubmit}

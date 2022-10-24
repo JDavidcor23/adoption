@@ -1,4 +1,4 @@
-export const requirements = [
+export const REQUIREMENTS = [
   {
     text: "minimum characters 8",
   },

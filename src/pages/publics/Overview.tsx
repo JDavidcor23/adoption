@@ -1,6 +1,6 @@
 import React from "react";
-import { ComponentOne } from "../../components/Steps";
+import { Steps } from "../../components/Steps";
 
 export const Overview = () => {
-  return <ComponentOne />;
+  return <Steps />;
 };
