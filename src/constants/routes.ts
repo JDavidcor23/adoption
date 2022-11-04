@@ -1,11 +1,13 @@
 export enum ROUTES {
   ERROR = "*",
-  HOME = "/Home",
+  HOME = "/home",
+  OVERVIEW = "/",
   REDIRECT = "/*",
   INBOX = "/inbox",
   LOGIN = "/login",
+  DETAIL = "/detail/",
   SIGN_UP = "/signup",
   PROFILE = "/profile",
-  OVERVIEW = "/overview",
   FAVORITES = "/favorites",
+  DETAIL_PARAMS = "/detail/:id",
 }

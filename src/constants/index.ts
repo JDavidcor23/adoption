@@ -4,8 +4,9 @@ export { NAVIGATION } from "./navigation";
 export { REQUIREMENTS } from "./requirements";
 
 // ENUMS
-export { STORAGE } from "./storage";
+export { DETAIL } from "./detail";
 export { ROUTES } from "./routes";
+export { STORAGE } from "./storage";
 
 // FUNCTIONS
 export { VALIDATE } from "./validate";

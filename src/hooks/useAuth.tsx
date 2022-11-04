@@ -1,15 +1,19 @@
 import { STORAGE } from "../constants";
 import { setIsLoggedIn } from "../slices";
-import { useDispatch, useSelector } from "react-redux";
 import { USER_INTERFACE } from "../interfaces/user";
-import { RootState } from "../interfaces/RootState";
+import { useDispatch, useSelector } from "react-redux";
+
+export interface RootState {
+  IsLoggedIn: {
+    data: boolean;
+  };
+}
 
 export const useAuth = () => {
   //CONSTANTS
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector<RootState, boolean>(
-    (store) => store?.IsLoggedIn?.data
-  );
+  const isLoggedIn = useSelector((store: RootState) => store?.IsLoggedIn?.data);
+
   //FUNCTIONS
   const setTrue = () => {
     dispatch(setIsLoggedIn(true));
@@ -48,6 +52,7 @@ export const useAuth = () => {
   const authVariables = {
     isLoggedIn,
   };
+
   return {
     authActions,
     authVariables,

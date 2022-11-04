@@ -1,4 +1,3 @@
-import React from "react";
 import { ROUTES } from "../constants";
 import { Home } from "../pages/privates/Home";
 import { Routes, Route, Navigate } from "react-router-dom";

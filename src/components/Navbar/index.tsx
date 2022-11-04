@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { NAVIGATION } from "../../constants";
-import { Svg } from "../../svg";
+import { SvgNavbar } from "../../svg/SvgNavbar";
+
 export const Navbar = () => {
   return (
     <nav>
@@ -15,7 +16,7 @@ export const Navbar = () => {
                     : ""
                 }
               >
-                <Svg
+                <SvgNavbar
                   color={isActive ?? false}
                   route={route.LINK}
                   class_name={isActive ? "mx-5px" : ""}

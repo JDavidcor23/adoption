@@ -1,11 +1,10 @@
-import React from "react";
 import { SvgHome } from "./SvgHome";
 import { SvgInbox } from "./SvgInbox";
-import { ROUTES } from "../constants";
+import { ROUTES } from "../../constants";
 import { SvgProfile } from "./SvgProfile";
 import { SvgFavorites } from "./SvgFavorites";
 
-export const Svg: React.FC<{
+export const SvgNavbar: React.FC<{
   color: boolean;
   class_name: string;
   route: string;

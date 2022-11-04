@@ -3,12 +3,20 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      spacing: {
+        "35px": "-35px",
+      },
+      boxShadow: {
+        heart: "1px 2px 33px -7px rgba(0,0,0,0.75)",
+      },
       borderRadius: {
         "20px": "20px",
+        "10px": "10px",
       },
       margin: {
         "35px": "35px",
         "5px": "5px",
+        "10px": "10px",
       },
       fontSize: {
         "35px": "35px",
@@ -21,9 +29,11 @@ module.exports = {
       width: {
         35: "35%",
         "100px": "100px",
+        "145px": "145px",
       },
       height: {
         480: "480px",
+        "225px": "225px",
       },
       maxHeight: {
         480: "480px",
@@ -35,7 +45,7 @@ module.exports = {
         loader: "loader 3.5s linear forwards",
         button: "button 3.5s linear forwards",
         img: "img 2.5s alternate ease-in",
-        sideContent: "1s sideContent linear",
+        sideContent: "0.5s sideContent linear",
       },
       keyframes: {
         loader: {

@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { ROUTES } from "../../constants";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Steps = () => {
-  const [step, setStep] = useState(1);
   const navigate = useNavigate();
+  const [step, setStep] = useState(1);
 
   const components = (step: number) => {
     switch (step) {
@@ -22,6 +22,7 @@ export const Steps = () => {
         break;
     }
   };
+
   useEffect(() => {
     components(step);
   }, [step]);

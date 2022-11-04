@@ -1,5 +1,3 @@
-import React from "react";
-
 export const StepTwo = () => {
   return (
     <div className="text-center text-black_custom flex flex-col items-center px-4 py-4 max-w-2xl m-auto animate-sideContent max-h-[480px]">

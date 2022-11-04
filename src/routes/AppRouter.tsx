@@ -8,8 +8,7 @@ import { STORAGE } from "../constants";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { DashboardRoutes } from "./DashboardRoutes";
-import { Favorites, Home, Inbox, Profile } from "../pages/privates";
-import { Navbar } from "../components/Navbar";
+import { Detail, Favorites, Home, Inbox, Profile } from "../pages/privates";
 
 export function AppRouter() {
   const { authVariables, authActions } = useAuth();
@@ -63,8 +62,8 @@ export function AppRouter() {
         <Route path={ROUTES.FAVORITES} element={<Favorites />} />
         <Route path={ROUTES.PROFILE} element={<Profile />} />
         <Route path={ROUTES.OVERVIEW} element={<Overview />} />
+        <Route path={ROUTES.DETAIL_PARAMS} element={<Detail />} />
       </Routes>
-      <Navbar />
     </BrowserRouter>
   );
 }
