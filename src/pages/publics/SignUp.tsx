@@ -98,11 +98,8 @@ export const SignUp = () => {
             {errorMessage && (
               <>
                 {REQUIREMENTS.map((REQUIREMENTS) => (
-                  <p
-                    className="text-red-500 text-xs italic"
-                    key={REQUIREMENTS.text}
-                  >
-                    {REQUIREMENTS.text}
+                  <p className="text-red-500 text-xs italic" key={REQUIREMENTS}>
+                    {REQUIREMENTS}
                   </p>
                 ))}
               </>

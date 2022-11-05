@@ -1,7 +1,7 @@
 import { ANIMALS } from "../api";
 import { setAnimalsSlice } from "../slices";
+import { ANIMALS_INTERFACE } from "../interfaces";
 import { useDispatch, useSelector } from "react-redux";
-import { ANIMALS_INTERFACE } from "../interfaces/animalsInterface";
 
 interface RootState {
   animals: {

@@ -1,6 +1,6 @@
 import { STORAGE } from "../constants";
 import { setIsLoggedIn } from "../slices";
-import { USER_INTERFACE } from "../interfaces/user";
+import { USER_INTERFACE } from "../interfaces";
 import { useDispatch, useSelector } from "react-redux";
 
 export interface RootState {

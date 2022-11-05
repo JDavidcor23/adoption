@@ -7,9 +7,8 @@ export interface ANIMALS_INTERFACE {
   type: string;
   race: string;
   city: string;
-  address: string;
   history: string;
-  location: string;
+  profileName: string;
+  profilePhoto: string;
   personality: string[];
-  personalityImg: string[];
 }

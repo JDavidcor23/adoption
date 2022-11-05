@@ -1,5 +1,5 @@
-export { Home } from "./Home";
-export { Inbox } from "./Inbox";
-export { Detail } from "./Detail";
-export { Profile } from "./Profile";
-export { Favorites } from "./Favorites";
+export * from "./Home";
+export * from "./Inbox";
+export * from "./Detail";
+export * from "./Profile";
+export * from "./Favorites";

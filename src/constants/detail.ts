@@ -1,12 +1,13 @@
 export enum DETAIL {
   AGE = "Age",
-  BALL = "Ball",
   MALE = "Male",
   RACE = "Race",
   TENDER = "Tender",
   FEMALE = "Female",
-  HEART_ONE = "HeartOne",
-  HEART_TWO = "HeartTwo",
+  PLAYFUL = "Playful",
   LOCATION = "Location",
   RESTLESS = "Restless",
+  HEART_TWO = "HeartTwo",
+  HEART_ONE = "HeartOne",
+  CUDDLY = "Cuddly",
 }

@@ -6,19 +6,14 @@ export const ANIMALS = [
     type: "Dogs",
     race: "Golden retriever",
     history:
-      "Chester is a very naughty and playful dog, the space in our house is very small, so our mission is to find the ideal family for him and I'm sure you are the right person",
-    personality: ["Affectionate", "Restless", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638140676/Adopcion/cari%C3%B1oso_s9yztu.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
-    city: "Los Ageles California",
-    location: "200-242 E Compton Blvd, Compton,",
-    address: "2900-2908 Hickory St, Dallas,",
-
+      "Chester is a very naughty and playful dog, the space in our house is very small, so our mission is to find the ideal family for him and I'm sure you are the right person.",
+    personality: ["Cuddly", "Restless", "Playful"],
+    city: "The Angeles California",
     age: "2 Months",
     sex: "Male",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/360_F_444539901_2GSnvmTX14LELJ6edPudUsarbcytOEgj_n6ugpp.jpg",
+    profileName: "Maria Dolores",
   },
   {
     id: "2",
@@ -28,16 +23,13 @@ export const ANIMALS = [
     race: "Chihuahua",
     history:
       "Papi is a happy and loving puppy, we have many animals and he bothers him, that's why our mission is to find the ideal family for him and I'm sure you are the right person.",
-    personality: ["Affectionate", "Restless", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638140676/Adopcion/cari%C3%B1oso_s9yztu.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
+    personality: ["Cuddly", "Restless", "Playful"],
     city: "Texas",
-    address: "2900-2908 Hickory St, Dallas,",
     age: "1 Month",
     sex: "Male",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/360_F_444539901_2GSnvmTX14LELJ6edPudUsarbcytOEgj_n6ugpp.jpg",
+    profileName: "Maria Dolores",
   },
   {
     id: "3",
@@ -46,36 +38,30 @@ export const ANIMALS = [
     type: "Dogs",
     race: "Rottweiler",
     history:
-      "Rocky is a very cute and affectionate dog, he has 5 more siblings and for space and time reasons we can't take care of all of them, our mission is to find the ideal family for him and I'm sure you are the right person",
-    personality: ["Affectionate", "Restless", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638140676/Adopcion/cari%C3%B1oso_s9yztu.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
-    city: "New Mexico 31134",
-    address: "4140 Parker Rd. Allentown,",
+      "Rocky is a very cute and Cuddly dog, he has 5 more siblings and for space and time reasons we can't take care of all of them, our mission is to find the ideal family for him and I'm sure you are the right person.",
+    personality: ["Cuddly", "Restless", "Playful"],
+    city: "New Mexico",
     age: "3 Months",
     sex: "Male",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/360_F_444539901_2GSnvmTX14LELJ6edPudUsarbcytOEgj_n6ugpp.jpg",
+    profileName: "Maria Dolores",
   },
   {
     id: "4",
     img: "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/Card_1_pedoc9.png",
-    name: "fuzz",
+    name: "Fuzz",
     type: "Dogs",
     race: "Bichon frisé",
     history:
-      "Pelusa is a very playful and affectionate dog, we travel a lot and we can't take care of her, that's why our mission is to find the ideal family for him and I'm sure you are the right person.",
-    personality: ["Affectionate", "Restless", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638140676/Adopcion/cari%C3%B1oso_s9yztu.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
+      "Pelusa is a very playful and Cuddly dog, we travel a lot and we can't take care of her, that's why our mission is to find the ideal family for him and I'm sure you are the right person.",
+    personality: ["Cuddly", "Restless", "Playful"],
     city: "New York",
-    address: "Lower Clinton Hill,",
     age: "2 Months",
-    sex: "female",
+    sex: "Female",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e_gstksx.jpg",
+    profileName: "Juan Jesus",
   },
   {
     id: "5",
@@ -84,39 +70,30 @@ export const ANIMALS = [
     type: "Cats",
     race: "British Shorthair",
     history:
-      "Matilde is the best back guard, she is always there to talk and she will receive every day with a strong affection. She was rescued and I am looking for a person who can give her all the love she needs",
+      "Matilde is the best back guard, she is always there to talk and she will receive every day with a strong affection. She was rescued and I am looking for a person who can give her all the love she needs.",
     personality: ["Playful", "Restless", "Tender"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104244/Adopcion/tierno_qqlhgw.png",
-    ],
-    city: "4140 Parker Rd. Allentown,",
-    location: "New Mexico 31134",
-    address: "2900-2908 Hickory St, Dallas,",
+    city: "New York",
     age: "6 Months",
-    sex: "female",
+    sex: "Female",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e_gstksx.jpg",
+    profileName: "Juan Jesus",
   },
   {
     id: "6",
     img: "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104242/Adopcion/Card_4_xqyejw.png",
-    name: "fluffy",
+    name: "Fluffy",
     type: "Cats",
     race: "Birman",
     history:
-      "Pelusa is a 4 month old playful cat, who is looking for a family that loves and cares for him a lot. He is very affectionate and loves to be petted, he gets along very well with other cats and dogs, and babies.",
+      "Pelusa is a 4 month old playful cat, who is looking for a family that loves and cares for him a lot. He is very Cuddly and loves to be petted, he gets along very well with other cats and dogs, and babies.",
     personality: ["Cuddly", "Tender", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638140676/Adopcion/cari%C3%B1oso_s9yztu.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104244/Adopcion/tierno_qqlhgw.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
     city: "Texas",
-    location: "2900-2908 Hickory St, Dallas,",
     age: "1 Month",
-    address: "2900-2908 Hickory St, Dallas,",
-
     sex: "Male",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e_gstksx.jpg",
+    profileName: "Juan Jesus",
   },
   {
     id: "7",
@@ -125,19 +102,14 @@ export const ANIMALS = [
     type: "Cats",
     race: "Bombay",
     history:
-      "Kity is a young and playful cat who is looking for a home to spend the rest of her life. She is affectionate and loving, and loves company with other aninimals !!!",
+      "Kity is a young and playful cat who is looking for a home to spend the rest of her life. She is Cuddly and loving, and loves company with other aninimals !!!.",
     personality: ["Restless", "Tender", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104244/Adopcion/tierno_qqlhgw.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
-    city: "New Mexico 31134",
-    location: "4140 Parker Rd. Allentown,",
-    address: "2900-2908 Hickory St, Dallas,",
-
+    city: "New Mexico",
     age: "3 Months",
-    sex: "female",
+    sex: "Female",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/360_F_444539901_2GSnvmTX14LELJ6edPudUsarbcytOEgj_n6ugpp.jpg",
+    profileName: "Maria Dolores",
   },
   {
     id: "8",
@@ -146,18 +118,13 @@ export const ANIMALS = [
     type: "Cats",
     race: "American cat",
     history:
-      "Bombon is a restless 6 month old cat, he likes to play with other animals and is very affectionate. he loves babies and sleeps a lot, we have no room for him so we are looking for a family for him.",
+      "Bombon is a restless 6 month old cat, he likes to play with other animals and is very Cuddly. he loves babies and sleeps a lot, we have no room for him so we are looking for a family for him.",
     personality: ["Cuddly", "Restless", "Playful"],
-    personalityImg: [
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638140676/Adopcion/cari%C3%B1oso_s9yztu.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/inquieto_tiaoyl.png",
-      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/jugueton_gkokcb.png",
-    ],
     city: "New York",
-    location: "Lower Clinton Hill,",
-    address: "2900-2908 Hickory St, Dallas,",
-
     age: "2 Months",
     sex: "Male",
+    profilePhoto:
+      "https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/360_F_444539901_2GSnvmTX14LELJ6edPudUsarbcytOEgj_n6ugpp.jpg",
+    profileName: "Maria Dolores",
   },
 ];

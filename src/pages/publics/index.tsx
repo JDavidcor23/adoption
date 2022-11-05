@@ -1,3 +1,3 @@
-export { Login } from "./Login";
-export { SignUp } from "./SignUp";
-export { Overview } from "./Overview";
+export * from "./Login";
+export * from "./SignUp";
+export * from "./Overview";

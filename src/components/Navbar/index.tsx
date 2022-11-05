@@ -4,7 +4,7 @@ import { SvgNavbar } from "../../svg/SvgNavbar";
 
 export const Navbar = () => {
   return (
-    <nav>
+    <nav className="bg-white w-full">
       <ul className="flex items-center py-15px px-15px justify-between">
         {NAVIGATION.map((route) => (
           <NavLink to={route.LINK} key={route.LINK}>

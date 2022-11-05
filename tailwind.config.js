@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        "35px": "-35px",
+        "200px": "-200px",
+        "1px": "-1px",
       },
       boxShadow: {
         heart: "1px 2px 33px -7px rgba(0,0,0,0.75)",
@@ -107,6 +108,7 @@ module.exports = {
         pink_custom: "#fec7d7",
         gray_custom: "#535353",
         black_custom: "#0e172c",
+        purple_custom: "#A786DF",
         tertiary_custom: "#d9d4e7",
         blue_1000: "rgba(14, 23, 44, 1)",
       },

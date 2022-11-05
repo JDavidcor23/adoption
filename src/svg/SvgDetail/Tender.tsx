@@ -1,8 +1,8 @@
 export const Tender = () => {
   return (
     <svg
-      width={40}
-      height={40}
+      width={60}
+      height={60}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"

@@ -1,7 +1,7 @@
 import { ROUTES } from "../constants";
 import { Navigate } from "react-router-dom";
-import { PropsRoutes } from "../interfaces/PropsRoutes";
+import { PROPS_ROUTES } from "../interfaces";
 
-export const PrivateRoute = ({ isAuthenticated, children }: PropsRoutes) => {
+export const PrivateRoute = ({ isAuthenticated, children }: PROPS_ROUTES) => {
   return isAuthenticated ? children : <Navigate to={ROUTES.OVERVIEW} />;
 };

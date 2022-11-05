@@ -1,12 +1,12 @@
-// CONSTANTS
-export { CATEGORIES } from "./categories";
-export { NAVIGATION } from "./navigation";
-export { REQUIREMENTS } from "./requirements";
-
 // ENUMS
-export { DETAIL } from "./detail";
-export { ROUTES } from "./routes";
-export { STORAGE } from "./storage";
+export * from "./detail";
+export * from "./routes";
+export * from "./storage";
 
 // FUNCTIONS
-export { VALIDATE } from "./validate";
+export * from "./validate";
+
+// CONSTANTS
+export * from "./categories";
+export * from "./navigation";
+export * from "./requirements";

@@ -1,4 +1,4 @@
 //ACTIONS SLICE
 
-export { setAnimalsSlice } from "./animals";
-export { setIsLoggedIn } from "./IsLoggedIn";
+export * from "./animals";
+export * from "./IsLoggedIn";
