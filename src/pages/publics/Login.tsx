@@ -27,7 +27,7 @@ export const Login = () => {
     <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col m-0 overflow-hidden p-0">
       <img
         src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/leonidasesteban.com_sfkukc.png"
-        alt=""
+        alt="Logo"
         className="w-36 animate-sideContent"
       />
       <div className="w-full max-w-xs animate-sideContent">

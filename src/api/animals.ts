@@ -66,7 +66,7 @@ export const ANIMALS = [
   {
     id: "5",
     img: "https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/Card_7_sikrru.png",
-    name: "Matilda",
+    name: "Matilde",
     type: "Cats",
     race: "British Shorthair",
     history:
@@ -86,7 +86,7 @@ export const ANIMALS = [
     type: "Cats",
     race: "Birman",
     history:
-      "Pelusa is a 4 month old playful cat, who is looking for a family that loves and cares for him a lot. He is very Cuddly and loves to be petted, he gets along very well with other cats and dogs, and babies.",
+      "Fluffy is a one-month-old kitten who needs to be adopted. She is very playful and loves to explore. She also loves to cuddle and be around people. Fluffy is up to date on all of her shots and has been spayed.",
     personality: ["Cuddly", "Tender", "Playful"],
     city: "Texas",
     age: "1 Month",

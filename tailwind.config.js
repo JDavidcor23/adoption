@@ -31,22 +31,33 @@ module.exports = {
         35: "35%",
         "100px": "100px",
         "145px": "145px",
+        "90%": "90%",
+        "40%": "40%",
+      },
+      minHeight: {
+        "80vh": "80vh",
       },
       height: {
         480: "480px",
-        "225px": "225px",
       },
       maxHeight: {
         480: "480px",
+        "84px": "84px",
       },
       maxWidth: {
+        "30rem": "30rem",
+        "320px": "320px",
+        "85%": "85%",
         70: "70px",
+        "70%": "70%",
+        "84px": "84px",
       },
       animation: {
         loader: "loader 3.5s linear forwards",
         button: "button 3.5s linear forwards",
         img: "img 2.5s alternate ease-in",
         sideContent: "0.5s sideContent linear",
+        sideAnimalContent: "1.5s sideAnimalContent linear",
       },
       keyframes: {
         loader: {
@@ -102,6 +113,26 @@ module.exports = {
             transform: "translateX(0px)",
           },
         },
+        sideAnimalContent: {
+          "0%": {
+            transform: "translateY(1000px)",
+          },
+          "25%": {
+            transform: "translateY(450px)",
+          },
+          "50%": {
+            transform: "translateY(300px)",
+          },
+          "75%": {
+            transform: "translateY(150px)",
+          },
+          "100%": {
+            transform: "translateY(0px)",
+          },
+        },
+      },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
       },
       colors: {
         cyan_custom: "#85d1ce",

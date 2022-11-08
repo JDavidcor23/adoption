@@ -10,11 +10,11 @@ export const NAVIGATION = [
     NAME: "Inbox",
   },
   {
-    LINK: ROUTES.PROFILE,
-    NAME: "Profile",
-  },
-  {
     LINK: ROUTES.FAVORITES,
     NAME: "Favorites",
+  },
+  {
+    LINK: ROUTES.PROFILE,
+    NAME: "Profile",
   },
 ];

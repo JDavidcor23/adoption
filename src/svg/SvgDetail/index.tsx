@@ -5,15 +5,15 @@ import { Tender } from "./Tender";
 import { Cuddly } from "./Cuddly";
 import { Female } from "./Female";
 import { Playful } from "./Playful";
-import { HeartOne } from "./HeartOne";
-import { HeartTwo } from "./HeartTwo";
+import { Heart } from "./Heart";
 import { Location } from "./Location";
 import { Restless } from "./Restless";
 import { DETAIL } from "../../constants";
 
 export const SvgDetail: React.FC<{
+  fill?: string;
   type: string | undefined;
-}> = ({ type }) => {
+}> = ({ type, fill }) => {
   switch (type) {
     case DETAIL.AGE:
       return <Age />;
@@ -31,12 +31,10 @@ export const SvgDetail: React.FC<{
       return <Restless />;
     case DETAIL.LOCATION:
       return <Location />;
-    case DETAIL.HEART_ONE:
-      return <HeartOne />;
-    case DETAIL.HEART_TWO:
-      return <HeartTwo />;
     case DETAIL.CUDDLY:
       return <Cuddly />;
+    case DETAIL.HEART:
+      return <Heart fill={fill} />;
     default:
       return <></>;
   }

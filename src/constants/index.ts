@@ -1,7 +1,9 @@
 // ENUMS
 export * from "./detail";
 export * from "./routes";
+export * from "./colors";
 export * from "./storage";
+export * from "./typeArrows";
 
 // FUNCTIONS
 export * from "./validate";

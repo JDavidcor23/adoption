@@ -3,7 +3,7 @@ export const StepOne = () => {
     <div className="text-center text-black_custom flex flex-col items-center px-4 py-4 max-w-2xl m-auto max-h-[480px]">
       <img
         src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104242/Adopcion/esperando_adopci%C3%B3n_zubzsz.png"
-        alt=""
+        alt="cats and dogs playing"
         className="w-72"
       />
       <h2 className="text-2xl mb-5 font-bold">Find your faithful friend</h2>

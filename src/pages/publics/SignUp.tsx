@@ -38,7 +38,7 @@ export const SignUp = () => {
     <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col">
       <img
         src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/leonidasesteban.com_sfkukc.png"
-        alt=""
+        alt="Logo"
         className="w-36"
       />
       <div className="w-full max-w-xs">

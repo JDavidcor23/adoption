@@ -32,7 +32,7 @@ export const Steps = () => {
       <div className="flex items-center justify-center h-full absolute w-full bg-pink_custom animate-loader">
         <img
           src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/leonidasesteban.com_sfkukc.png"
-          alt=""
+          alt="Logo"
           className="scale-150 w-32 h-32 animate-img"
         />
       </div>

@@ -12,7 +12,7 @@ export const Navbar = () => {
               <li
                 className={
                   isActive
-                    ? "flex items-center p-2 bg-black_custom rounded-20px text-cyan_custom"
+                    ? "flex items-center p-2 bg-black_custom rounded-20px text-cyan_custom font-nunito"
                     : ""
                 }
               >
