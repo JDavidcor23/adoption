@@ -10,13 +10,13 @@ export const Cards: React.FC<{
 
   return (
     <div
-      className={`flex flex-wrap items-center justify-center w-90% max-w-85% m-auto ${class_name}`}
+      className={`flex flex-wrap items-center justify-center w-full m-auto  md:w-90% ${class_name}`}
     >
       {animals.length > 0 &&
         animals.map((animal) => (
           <div
             key={animal.id}
-            className="m-10px relative w-40% max-w-320px cursor-pointer"
+            className="m-10px relative w-145px max-w-320px cursor-pointer md:w-40%"
             onClick={() => navigate(`${ROUTES.DETAIL}${animal.id}`)}
           >
             <img

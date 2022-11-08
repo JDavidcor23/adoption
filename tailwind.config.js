@@ -143,6 +143,9 @@ module.exports = {
         tertiary_custom: "#d9d4e7",
         blue_1000: "rgba(14, 23, 44, 1)",
       },
+      screens: {
+        mobile: "700px",
+      },
     },
   },
   plugins: [],
