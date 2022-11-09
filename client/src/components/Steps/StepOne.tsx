@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+
 export const StepOne = () => {
+  const get = async () => {
+    const resp = await fetch("http://localhost:3001/");
+    console.log(resp);
+  };
+  useEffect(() => {
+    get();
+  }, []);
+
   return (
     <div className="text-center text-black_custom flex flex-col items-center px-4 py-4 max-w-2xl m-auto max-h-[480px]">
       <img
