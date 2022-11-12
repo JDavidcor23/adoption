@@ -1,10 +1,9 @@
-import { ANIMALS } from "../api";
 import { createSlice } from "@reduxjs/toolkit";
 
 export const animalsSlice = createSlice({
   name: "animals",
   initialState: {
-    data: [...ANIMALS],
+    data: [],
   },
   reducers: {
     setAnimalsSlice: (state, action) => {

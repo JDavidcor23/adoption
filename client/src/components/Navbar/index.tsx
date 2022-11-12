@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { NAVIGATION } from "../../constants";
+import { NAVIGATION } from "../../utils/constants";
 import { SvgNavbar } from "../../svg/SvgNavbar";
 
 export const Navbar = () => {

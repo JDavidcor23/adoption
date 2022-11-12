@@ -1,6 +1,6 @@
 import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
-import { STORAGE } from "../../constants";
+import { STORAGE } from "../../utils/constants";
 import { ANIMALS_INTERFACE } from "../../interfaces";
 
 export const Favorites = () => {

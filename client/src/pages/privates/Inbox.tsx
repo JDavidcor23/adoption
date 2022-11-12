@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import { Navbar } from "../../components/Navbar";
-import { ROUTES, TYPE_ARROWS } from "../../constants";
+import { ROUTES, TYPE_ARROWS } from "../../utils/constants";
 import { Arrow } from "../../svg/Arrow";
 
 export const Inbox = () => {

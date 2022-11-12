@@ -1,8 +1,11 @@
 import express from "express";
+import { nameRoutes } from "../constants/index.js";
 import { router as routerAnimal } from "./animals.router.js";
+import { router as favoritesAnimals } from "./favoritesAnimals.router.js";
 
 export function routerApi(app) {
   const router = express.Router();
-  app.use("/api/v1", router);
-  router.use("/animals", routerAnimal);
+  app.use(nameRoutes.VERSION, router);
+  router.use(nameRoutes.ANIMALS, routerAnimal);
+  router.use(nameRoutes.FAVORITES_ANIMALS, favoritesAnimals);
 }

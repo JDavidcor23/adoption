@@ -1,4 +1,4 @@
-import { TYPE_ARROWS } from "../../constants";
+import { TYPE_ARROWS } from "../../utils/constants";
 import { Left } from "./Left";
 import { Right } from "./Right";
 

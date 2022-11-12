@@ -1,10 +1,16 @@
 import { useHome } from "../../hooks";
-import { CATEGORIES } from "../../constants";
+import { CATEGORIES } from "../../utils/constants";
 import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
+import { useEffect } from "react";
 
 export const Home = () => {
   const { homeActions, homeData } = useHome();
+  useEffect(() => {
+    homeActions.getAnimals();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <main className=" bg-pink_custom w-full min-h-screen">
@@ -35,10 +41,12 @@ export const Home = () => {
               </div>
             ))}
           </div>
-          <Cards
-            animals={homeData.animals}
-            class_name="animate-sideAnimalContent"
-          />
+          {homeData.animalsResp !== undefined && (
+            <Cards
+              animals={homeData.animalsResp}
+              class_name="animate-sideAnimalContent"
+            />
+          )}
         </div>
       </main>
       <Navbar />

@@ -1,4 +1,4 @@
-import { ROUTES } from "../constants";
+import { ROUTES } from "../utils/constants";
 import { Navigate } from "react-router-dom";
 import { PROPS_ROUTES } from "../interfaces";
 

@@ -1,6 +1,6 @@
 import { SvgHome } from "./SvgHome";
 import { SvgInbox } from "./SvgInbox";
-import { ROUTES } from "../../constants";
+import { ROUTES } from "../../utils/constants";
 import { SvgProfile } from "./SvgProfile";
 import { SvgFavorites } from "./SvgFavorites";
 

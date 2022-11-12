@@ -1,46 +1,53 @@
-import { useState } from "react";
-import { COLORS, STORAGE } from "../constants";
+import { useFavorites } from "./useFavorites";
+import { setDetailAnimalSlice } from "../slices";
 import { ANIMALS_INTERFACE } from "../interfaces";
+import * as request from "../utils/helper/axiosHelper";
+import { useDispatch, useSelector } from "react-redux";
+
+interface RootState_DetailAnimal {
+  detailAnimal: {
+    data: ANIMALS_INTERFACE;
+  };
+}
 
 export const useDetail = () => {
   //CONSTANTS
-  const [color, setColor] = useState("#D9D4E7");
+  const dispatch = useDispatch();
+  const { favoritesActions } = useFavorites();
+  const detailAnimal = useSelector(
+    (store: RootState_DetailAnimal) => store?.detailAnimal?.data
+  );
 
   //FUNCTIONS
-  const savePets = (pet: Array<ANIMALS_INTERFACE>) => {
-    localStorage.setItem(STORAGE.FAVORITE_PETS, JSON.stringify(pet));
+
+  const getAnimalId = async (id: string | undefined) => {
+    try {
+      const resp = await request.getAnimalId(id);
+      dispatch(setDetailAnimalSlice(resp));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const changeColor = (
-    id: string | undefined,
-    pet: ANIMALS_INTERFACE | undefined
-  ) => {
-    const favoritePets: Array<ANIMALS_INTERFACE> = JSON.parse(
-      localStorage.getItem(STORAGE.FAVORITE_PETS) || "[]"
-    );
-
-    if (favoritePets.some((pet) => pet.id !== id)) {
-      if (pet !== undefined) {
-        setColor(COLORS.DARK_PINK);
-        savePets([...favoritePets, pet]);
-      }
-    }
-
-    if (favoritePets.some((pet) => pet.id === id)) {
-      const newPets = favoritePets.filter((pet) => pet.id !== id);
-      localStorage.setItem(STORAGE.FAVORITE_PETS, JSON.stringify(newPets));
-      setColor(COLORS.LIGHT_PINK);
+  const postFavoriteAnimals = async (animal: ANIMALS_INTERFACE) => {
+    try {
+      await request.postFavoriteAnimals(animal);
+      favoritesActions.getFavoriteAnimals();
+    } catch (error) {
+      console.log(error);
     }
   };
 
   //OBJ
   const detailActions = {
-    setColor,
-    changeColor,
+    getAnimalId,
+    postFavoriteAnimals,
   };
+
   const detailVariables = {
-    color,
+    detailAnimal,
   };
+
   return {
     detailActions,
     detailVariables,

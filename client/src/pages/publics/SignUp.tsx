@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../hooks";
 import React, { useState, useEffect } from "react";
-import { REQUIREMENTS, VALIDATE } from "../../constants";
+import { REQUIREMENTS, VALIDATE } from "../../utils/constants";
 
 export const SignUp = () => {
   const { authActions } = useAuth();

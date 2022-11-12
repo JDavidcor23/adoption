@@ -56,8 +56,10 @@ module.exports = {
         loader: "loader 3.5s linear forwards",
         button: "button 3.5s linear forwards",
         img: "img 2.5s alternate ease-in",
-        sideContent: "0.5s sideContent linear",
+        sideContentPlus: "0.5s sideContentPlus linear",
+        sideContentMinus: "0.5s sideContentMinus linear",
         sideAnimalContent: "1.5s sideAnimalContent linear",
+        sideAnimalContentDetail: "2s sideAnimalContent linear",
       },
       keyframes: {
         loader: {
@@ -96,7 +98,7 @@ module.exports = {
             transform: "scale(1.5)",
           },
         },
-        sideContent: {
+        sideContentPlus: {
           "0%": {
             transform: "translateX(1000px)",
           },
@@ -108,6 +110,23 @@ module.exports = {
           },
           "75%": {
             transform: "translateX(150px)",
+          },
+          "100%": {
+            transform: "translateX(0px)",
+          },
+        },
+        sideContentMinus: {
+          "0%": {
+            transform: "translateX(-1000px)",
+          },
+          "25%": {
+            transform: "translateX(-450px)",
+          },
+          "50%": {
+            transform: "translateX(-300px)",
+          },
+          "75%": {
+            transform: "translateX(-150px)",
           },
           "100%": {
             transform: "translateX(0px)",

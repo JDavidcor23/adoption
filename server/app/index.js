@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import { routerApi } from "./router/router.js";
+
 const app = express();
 
 const port = 3000;

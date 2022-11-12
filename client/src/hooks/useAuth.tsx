@@ -1,4 +1,4 @@
-import { STORAGE } from "../constants";
+import { STORAGE } from "../utils/constants";
 import { setIsLoggedIn } from "../slices";
 import { USER_INTERFACE } from "../interfaces";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
-import { ROUTES } from "../../constants";
+import { ROUTES } from "../../utils/constants";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 

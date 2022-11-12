@@ -1,9 +1,9 @@
-import { ROUTES } from "../../constants";
+import { ROUTES } from "../../utils/constants";
 import { useNavigate } from "react-router";
-import { ANIMALS_INTERFACE } from "../../interfaces";
+import { ANIMALS } from "../../interfaces";
 
 export const Cards: React.FC<{
-  animals: Array<ANIMALS_INTERFACE>;
+  animals: Array<ANIMALS>;
   class_name?: string;
 }> = ({ animals, class_name }) => {
   const navigate = useNavigate();

@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ROUTES } from "../constants";
 import { useAuth } from "../hooks";
 import { Login, Overview, SignUp } from "../pages/publics";
-import { STORAGE } from "../constants";
+import { STORAGE, ROUTES } from "../utils/constants";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { DashboardRoutes } from "./DashboardRoutes";

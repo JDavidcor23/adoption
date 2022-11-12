@@ -8,12 +8,11 @@ import { Playful } from "./Playful";
 import { Heart } from "./Heart";
 import { Location } from "./Location";
 import { Restless } from "./Restless";
-import { DETAIL } from "../../constants";
+import { DETAIL } from "../../utils/constants";
 
 export const SvgDetail: React.FC<{
-  fill?: string;
   type: string | undefined;
-}> = ({ type, fill }) => {
+}> = ({ type }) => {
   switch (type) {
     case DETAIL.AGE:
       return <Age />;
@@ -34,7 +33,7 @@ export const SvgDetail: React.FC<{
     case DETAIL.CUDDLY:
       return <Cuddly />;
     case DETAIL.HEART:
-      return <Heart fill={fill} />;
+      return <Heart />;
     default:
       return <></>;
   }

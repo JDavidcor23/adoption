@@ -28,9 +28,9 @@ export const Login = () => {
       <img
         src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/leonidasesteban.com_sfkukc.png"
         alt="Logo"
-        className="w-36 animate-sideContent"
+        className="w-36 animate-sideContentPlus"
       />
-      <div className="w-full max-w-xs animate-sideContent">
+      <div className="w-full max-w-xs animate-sideContentPlus">
         <form
           className="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4"
           onSubmit={handleSubmit}
