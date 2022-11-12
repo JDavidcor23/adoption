@@ -1,12 +1,15 @@
 import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
-import { STORAGE } from "../../utils/constants";
-import { ANIMALS_INTERFACE } from "../../interfaces";
+import { useFavorites } from "../../hooks";
+import { useEffect } from "react";
 
 export const Favorites = () => {
-  const favoritePets: Array<ANIMALS_INTERFACE> = JSON.parse(
-    localStorage.getItem(STORAGE.FAVORITE_PETS) || "[]"
-  );
+  const { favoritesActions, favoritesVariables } = useFavorites();
+
+  useEffect(() => {
+    favoritesActions.getFavoriteAnimals();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <div className=" bg-pink_custom w-full min-h-screen">
@@ -14,7 +17,7 @@ export const Favorites = () => {
           <h2 className=" text-35px font-bold text-black_custom my-35px font-nunito text-center">
             Favorite Pets
           </h2>
-          <Cards animals={favoritePets} />
+          <Cards animals={favoritesVariables.favoriteAnimals} />
         </div>
       </div>
       <Navbar />

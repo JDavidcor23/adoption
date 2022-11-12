@@ -29,13 +29,12 @@ router.post(nameRoutes.DEFAULT, async (request, response) => {
 });
 
 router.delete(nameRoutes.DEFAULT, (request, response) => {
-  const { id } = request.params;
+  const body = request.body;
   _.each(FAVORITES_ANIMALS, (d, i) => {
-    if (d.id == id) {
-      data.splice(i, 1);
+    if (d.id == body.id) {
+      FAVORITES_ANIMALS.splice(i, 1);
     }
   });
-
   response.json(FAVORITES_ANIMALS);
 });
 

@@ -3,6 +3,7 @@ import { setDetailAnimalSlice } from "../slices";
 import { ANIMALS_INTERFACE } from "../interfaces";
 import * as request from "../utils/helper/axiosHelper";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 interface RootState_DetailAnimal {
   detailAnimal: {
@@ -13,7 +14,8 @@ interface RootState_DetailAnimal {
 export const useDetail = () => {
   //CONSTANTS
   const dispatch = useDispatch();
-  const { favoritesActions } = useFavorites();
+
+  const [isFavorite, setIsFavorite] = useState(false);
   const detailAnimal = useSelector(
     (store: RootState_DetailAnimal) => store?.detailAnimal?.data
   );
@@ -29,22 +31,14 @@ export const useDetail = () => {
     }
   };
 
-  const postFavoriteAnimals = async (animal: ANIMALS_INTERFACE) => {
-    try {
-      await request.postFavoriteAnimals(animal);
-      favoritesActions.getFavoriteAnimals();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   //OBJ
   const detailActions = {
     getAnimalId,
-    postFavoriteAnimals,
+    setIsFavorite,
   };
 
   const detailVariables = {
+    isFavorite,
     detailAnimal,
   };
 

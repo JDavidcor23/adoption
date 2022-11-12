@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const detailAnimalSlice = createSlice({
   name: "detailAnimal",
   initialState: {
-    data: [],
+    data: {},
   },
   reducers: {
     setDetailAnimalSlice: (state, action) => {

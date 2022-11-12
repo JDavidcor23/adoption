@@ -25,3 +25,9 @@ export const postFavoriteAnimals = (data) => {
     data,
   });
 };
+export const deleteFavoriteAnimals = (data) => {
+  return apiInstance(endpoints.favoriteAnimals, {
+    method: "DELETE",
+    data,
+  });
+};

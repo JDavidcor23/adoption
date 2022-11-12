@@ -18,10 +18,9 @@ export const Detail = () => {
     favoritesActions.getFavoriteAnimals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
     <div>
-      {detailVariables.detailAnimal.name !== undefined && (
+      {detailVariables.detailAnimal.id !== undefined && (
         <div className="relative block sm:flex ">
           <div
             className="bg-slate-900 flex items-center justify-center h-12 w-12 rounded-full absolute top-2.5 left-2.5 z-10 cursor-pointer animate-sideContentMinus"
@@ -46,14 +45,7 @@ export const Detail = () => {
                   </h3>
                   <SvgDetail type={detailVariables.detailAnimal.sex} />
                 </div>
-                <div
-                  className="flex items-center justify-center h-10 w-10 rounded-full shadow-heart cursor-pointer"
-                  onClick={() =>
-                    detailActions.postFavoriteAnimals(
-                      detailVariables.detailAnimal
-                    )
-                  }
-                >
+                <div className="flex items-center justify-center h-10 w-10 rounded-full shadow-heart cursor-pointer">
                   <SvgDetail type={DETAIL.HEART} />
                 </div>
               </div>
