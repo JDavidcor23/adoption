@@ -1,4 +1,4 @@
-export const base = process.env.BASE;
+export const base = process.env.REACT_APP_BACKEND_URL_DEV;
 
 // GET
 

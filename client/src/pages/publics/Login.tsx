@@ -1,6 +1,6 @@
 import { useAuth } from "../../hooks";
 import React, { useState } from "react";
-
+import { base } from "../../utils/helper/endpoints";
 export const Login = () => {
   const { authActions } = useAuth();
 
@@ -22,7 +22,7 @@ export const Login = () => {
     e.preventDefault();
     authActions.login(user);
   };
-
+  console.log({ base });
   return (
     <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col m-0 overflow-hidden p-0">
       <img

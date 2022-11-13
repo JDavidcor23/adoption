@@ -2,7 +2,7 @@ import axios from "axios";
 // import { STORAGE } from "../constants";
 import { base } from "./endpoints";
 
-const apiInstance = axios.create({ baseURL: "http://localhost:3000/api/v1/" });
+const apiInstance = axios.create({ baseURL: base });
 
 apiInstance.interceptors.request.use(
   async (request) => {
