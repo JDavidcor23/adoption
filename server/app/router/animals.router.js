@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.get(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
+    console.log(request.token);
     jwt.verify(request.token, "secretKey", (err, authData) => {
       if (err) {
         response.status(403).json({ resp: "Invalidated credentials" });

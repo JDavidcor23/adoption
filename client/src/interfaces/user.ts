@@ -1,5 +1,7 @@
 export interface USER_INTERFACE {
-  name?: string;
+  uuid?: string;
   email: string;
   password: string;
+  profileName?: string;
+  profilePhoto?: string;
 }

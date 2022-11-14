@@ -8,12 +8,16 @@ const router = express.Router();
 
 router.post(nameRoutes.DEFAULT, async (request, response) => {
   try {
-    const uuid = uuidv4();
-    const user = { ...request.body, uuid };
-    USERS.push(user);
-    jwt.sign({ user }, "secretKey", (err, token) => {
-      response.json({ token });
-    });
+    if (!USERS.some((u) => u.email === request.body.email)) {
+      const uuid = uuidv4();
+      const user = { ...request.body, uuid };
+      USERS.push(user);
+      jwt.sign({ user }, "secretKey", (err, token) => {
+        response.status(200).json({ token });
+      });
+      return;
+    }
+    response.status(403).json({ resp: "Email is already exist" });
   } catch (error) {
     throw new Error(error);
   }

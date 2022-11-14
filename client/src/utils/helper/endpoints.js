@@ -1,8 +1,8 @@
-export const base = process.env.REACT_APP_BACKEND_URL_DEV;
+export const login = "login";
 
-// GET
+export const signup = "signup";
 
-export const getAnimals = "animals/";
+export const getAnimals = "animals";
 
 export const getAnimalId = (id) => `animals/${id}`;
 

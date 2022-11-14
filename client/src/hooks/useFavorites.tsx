@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ANIMALS_INTERFACE } from "../interfaces";
 import { setFavoriteAnimalsSlice } from "../slices";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +23,7 @@ export const useFavorites = () => {
       console.log(error);
     }
   };
+
   const postFavoriteAnimals = async (animal: ANIMALS_INTERFACE) => {
     try {
       await request.postFavoriteAnimals(animal);
@@ -32,6 +32,7 @@ export const useFavorites = () => {
       console.log(error);
     }
   };
+
   const deleteFavoriteAnimals = async (id: string) => {
     try {
       await request.deleteFavoriteAnimals({ id });
@@ -40,6 +41,7 @@ export const useFavorites = () => {
       console.log(error);
     }
   };
+
   const favoritesActions = {
     getFavoriteAnimals,
     postFavoriteAnimals,

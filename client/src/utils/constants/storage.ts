@@ -1,4 +1,3 @@
 export enum STORAGE {
-  USER = "USER",
-  FAVORITE_PETS = "FAVORITE_PETS",
+  TOKEN = "TOKEN",
 }

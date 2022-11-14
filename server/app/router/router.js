@@ -9,7 +9,7 @@ export function routerApi(app) {
   const router = express.Router();
   app.use(nameRoutes.VERSION, router);
   router.use(nameRoutes.LOGIN, login);
-  router.use(nameRoutes.SING_UP, singUp);
+  router.use(nameRoutes.SIGNUP, singUp);
   router.use(nameRoutes.ANIMALS, routerAnimal);
   router.use(nameRoutes.FAVORITES_ANIMALS, favoritesAnimals);
 }

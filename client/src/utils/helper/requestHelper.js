@@ -1,25 +1,18 @@
 import axios from "axios";
-// import { STORAGE } from "../constants";
-import { base } from "./endpoints";
+import { STORAGE } from "../constants";
 
-const apiInstance = axios.create({ baseURL: base });
+const apiInstance = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND_URL_DEV,
+});
 
 apiInstance.interceptors.request.use(
   async (request) => {
-    // const { headers } = request;
-    // let accessToken   =
-    //   localStorage.getItem(STORAGE.USER) ?? null; ;
-
-    // if (request.token) {
-    //   let isExpired = validateToken(accessToken?.ACCESS_TOKEN);
-    //   if (isExpired) {
-    //     const resp = await refreshToken(accessToken?.REFRESH_TOKEN);
-    //     headers.Authorization = `Bearer ${resp}`;
-    //   } else {
-    //     headers.Authorization = `Bearer ${accessToken?.ACCESS_TOKEN}`;
-    //   }
-    // }
-    // headers["Content-Type"] = "application/json";
+    const { headers } = request;
+    let accessToken = JSON.parse(localStorage.getItem(STORAGE.TOKEN)) ?? null;
+    if (request.token) {
+      headers.Authorization = `Bearer ${accessToken?.token}`;
+    }
+    headers["Content-Type"] = "application/json";
     return request;
   },
   (error) => {

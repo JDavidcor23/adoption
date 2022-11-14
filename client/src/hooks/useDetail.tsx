@@ -1,4 +1,3 @@
-import { useFavorites } from "./useFavorites";
 import { setDetailAnimalSlice } from "../slices";
 import { ANIMALS_INTERFACE } from "../interfaces";
 import * as request from "../utils/helper/axiosHelper";

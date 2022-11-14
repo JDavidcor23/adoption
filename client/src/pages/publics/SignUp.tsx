@@ -9,7 +9,7 @@ export const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState(false);
 
   const [user, setUser] = useState({
-    name: "",
+    profileName: "",
     email: "",
     password: "",
   });
@@ -55,9 +55,9 @@ export const SignUp = () => {
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-              id="name"
+              id="profileName"
               type="text"
-              name="name"
+              name="profileName"
               placeholder="Name"
               onChange={handleChange}
             />

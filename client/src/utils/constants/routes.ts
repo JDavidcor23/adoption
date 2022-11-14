@@ -6,7 +6,7 @@ export enum ROUTES {
   INBOX = "/inbox",
   LOGIN = "/login",
   DETAIL = "/detail/",
-  SIGN_UP = "/signup",
+  SIGNUP = "/signup",
   PROFILE = "/profile",
   MESSAGE = "/message/",
   FAVORITES = "/favorites",

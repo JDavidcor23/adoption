@@ -1,7 +1,7 @@
 export const nameRoutes = {
   DEFAULT: "/",
   LOGIN: "/login",
-  SING_UP: "/singUp",
+  SIGNUP: "/signup",
   DEFAULT_ID: "/:id",
   VERSION: "/api/v1",
   ANIMALS: "/animals",
