@@ -15,7 +15,12 @@ router.get(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
         response.status(403).json({ resp: "Invalidated credentials" });
         return;
       }
-      response.status(200).json(FAVORITES_ANIMALS);
+      const idUser = FAVORITES_ANIMALS.findIndex(
+        (user) => user.uuid === authData.userExists.uuid
+      );
+      if (idUser >= 0) {
+        response.status(200).json(FAVORITES_ANIMALS[idUser].animals);
+      }
     });
   } catch (error) {
     throw new Error(error);
@@ -30,13 +35,28 @@ router.post(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
         return;
       }
       const body = request.body;
-      const isTheAnimalInFavorites = FAVORITES_ANIMALS.some(
-        (animal) => animal.id === body.id
+      const idUser = FAVORITES_ANIMALS.findIndex(
+        (user) => user.uuid === authData.userExists.uuid
       );
-      if (!isTheAnimalInFavorites) {
-        FAVORITES_ANIMALS.push(body);
+      if (idUser >= 0) {
+        const isTheAnimalInFavorites = FAVORITES_ANIMALS[idUser].animals.some(
+          (animal) => animal.id === body.id
+        );
+        if (!isTheAnimalInFavorites) {
+          FAVORITES_ANIMALS[idUser].animals.push(body);
+          response.status(200).json(FAVORITES_ANIMALS);
+          return;
+        }
+        response.status(403).json({ resp: "the animal is already exists" });
+        return;
       }
-      response.status(200).json({ resp: "Saved" });
+
+      let data = {
+        uuid: authData.userExists.uuid,
+        animals: [body],
+      };
+      FAVORITES_ANIMALS.push(data);
+      response.status(200).json(FAVORITES_ANIMALS);
     });
   } catch (error) {
     throw new Error(error);

@@ -19,7 +19,7 @@ export const Detail = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {detailVariables.detailAnimal.id !== undefined && (
         <div className="relative block sm:flex ">
           <div

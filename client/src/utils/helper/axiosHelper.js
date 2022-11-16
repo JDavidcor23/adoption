@@ -1,6 +1,21 @@
 import apiInstance from "./requestHelper";
 import * as endpoints from "./endpoints";
 
+export const getUser = () => {
+  return apiInstance(endpoints.user, {
+    method: "GET",
+    token: true,
+  });
+};
+
+export const postUser = (data) => {
+  return apiInstance(endpoints.user, {
+    method: "POST",
+    token: true,
+    data,
+  });
+};
+
 export const login = (data) => {
   return apiInstance(endpoints.login, {
     method: "POST",

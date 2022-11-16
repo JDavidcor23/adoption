@@ -1,5 +1,6 @@
 export const nameRoutes = {
   DEFAULT: "/",
+  USER: "/user",
   LOGIN: "/login",
   SIGNUP: "/signup",
   DEFAULT_ID: "/:id",

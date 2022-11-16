@@ -1,7 +1,11 @@
 import { useAuth } from "../../hooks";
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { ROUTES } from "../../utils/constants";
 
 export const Login = () => {
+  const navigate = useNavigate();
+
   const { authActions } = useAuth();
 
   const [user, setUser] = useState({
@@ -21,6 +25,7 @@ export const Login = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     authActions.login(user);
+    navigate(ROUTES.HOME);
   };
 
   return (

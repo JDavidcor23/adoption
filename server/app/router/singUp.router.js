@@ -10,9 +10,9 @@ router.post(nameRoutes.DEFAULT, async (request, response) => {
   try {
     if (!USERS.some((u) => u.email === request.body.email)) {
       const uuid = uuidv4();
-      const user = { ...request.body, uuid };
-      USERS.push(user);
-      jwt.sign({ user }, "secretKey", (err, token) => {
+      const userExists = { ...request.body, uuid };
+      USERS.push(userExists);
+      jwt.sign({ userExists }, "secretKey", (err, token) => {
         response.status(200).json({ token });
       });
       return;

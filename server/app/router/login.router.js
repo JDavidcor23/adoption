@@ -13,7 +13,7 @@ router.post(nameRoutes.DEFAULT, async (request, response) => {
     );
     if (userExists !== undefined) {
       jwt.sign({ userExists }, "secretKey", (err, token) => {
-        response.json({ token });
+        response.json({ token, uuid: userExists.uuid });
       });
     } else {
       response.status(403).json({ resp: "Invalid email or password" });
