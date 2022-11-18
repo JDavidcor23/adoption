@@ -1,7 +1,7 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import { nameRoutes } from "../constants/index.js";
-import { verifyToken } from "../middlewares/verifyToken.js";
+import { verifyToken } from "../middleware/middleware.js";
 import ANIMALS from "../data/animalsData.json" assert { type: "json" };
 
 const router = express.Router();

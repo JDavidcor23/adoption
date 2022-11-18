@@ -3,7 +3,7 @@ import express from "express";
 import { nameRoutes } from "../constants/index.js";
 import jwt from "jsonwebtoken";
 
-import { verifyToken } from "../middlewares/verifyToken.js";
+import { verifyToken } from "../middleware/middleware.js";
 import FAVORITES_ANIMALS from "../data/favoritesAnimals.json" assert { type: "json" };
 
 const router = express.Router();

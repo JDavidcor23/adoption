@@ -1,5 +1,6 @@
 export interface ANIMALS_INTERFACE {
   id: string;
+  uuid: string;
   img: string;
   name: string;
   race: string;

@@ -2,12 +2,16 @@ import { useHome } from "../../hooks";
 import { CATEGORIES } from "../../utils/constants";
 import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 export const Home = () => {
   const { homeActions, homeData } = useHome();
-  useEffect(() => {
+  const getAnimals = useCallback(() => {
     homeActions.getAnimals();
+  }, []);
+
+  useEffect(() => {
+    getAnimals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

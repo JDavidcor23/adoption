@@ -8,8 +8,7 @@ export enum ROUTES {
   DETAIL = "/detail/",
   SIGNUP = "/signup",
   PROFILE = "/profile",
-  MESSAGE = "/message/",
+  MESSAGE = "/message",
   FAVORITES = "/favorites",
   DETAIL_PARAMS = "/detail/:id",
-  MESSAGE_PARAMS = "/message/:id",
 }

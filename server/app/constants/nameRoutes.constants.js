@@ -3,6 +3,7 @@ export const nameRoutes = {
   USER: "/user",
   LOGIN: "/login",
   SIGNUP: "/signup",
+  INBOX: "/inbox",
   DEFAULT_ID: "/:id",
   VERSION: "/api/v1",
   ANIMALS: "/animals",

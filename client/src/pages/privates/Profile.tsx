@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Navbar } from "../../components/Navbar";
+import { useAuth } from "../../hooks";
 import { useUser } from "../../hooks/useUser";
 
 export const Profile = () => {
@@ -18,7 +19,7 @@ export const Profile = () => {
       [event?.target.name]: event?.target.value,
     });
   };
-
+  const { authActions } = useAuth();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     userActions.postUser({ ...userVariables?.user, ...user });
@@ -28,9 +29,12 @@ export const Profile = () => {
       profileName: "",
     });
   };
+  const getUserCallback = useCallback(() => {
+    userActions.getUser();
+  }, [userVariables.user]);
 
   useEffect(() => {
-    userActions.getUser();
+    getUserCallback();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -94,6 +98,13 @@ export const Profile = () => {
               />
               <button className="h-12 text-white w-full rounded-3xl bg-black_custom font-bold my-2 font-nunito">
                 Save
+              </button>
+              <button
+                className="h-12 text-white w-full rounded-3xl bg-black_custom font-bold my-2 font-nunito"
+                type="button"
+                onClick={authActions.logOut}
+              >
+                Logout
               </button>
             </form>
           </div>

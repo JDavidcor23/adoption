@@ -8,6 +8,13 @@ export const getUser = () => {
   });
 };
 
+export const getInbox = (data) => {
+  return apiInstance(endpoints.getInbox(data), {
+    method: "GET",
+    token: true,
+  });
+};
+
 export const postUser = (data) => {
   return apiInstance(endpoints.user, {
     method: "POST",

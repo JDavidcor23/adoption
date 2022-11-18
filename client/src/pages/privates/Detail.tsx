@@ -12,7 +12,10 @@ export const Detail = () => {
   const { favoritesActions } = useFavorites();
 
   const { detailActions, detailVariables } = useDetail();
-
+  const getInbox = (uuid: string) => {
+    detailActions.getInbox(uuid);
+    navigate(ROUTES.MESSAGE);
+  };
   useEffect(() => {
     detailActions.getAnimalId(id);
     favoritesActions.getFavoriteAnimals();
@@ -24,7 +27,7 @@ export const Detail = () => {
         <div className="relative block sm:flex ">
           <div
             className="bg-slate-900 flex items-center justify-center h-12 w-12 rounded-full absolute top-2.5 left-2.5 z-10 cursor-pointer animate-sideContentMinus"
-            onClick={() => navigate(ROUTES.HOME)}
+            onClick={() => navigate(-1)}
           >
             <Arrow type={TYPE_ARROWS.LEFT} />
           </div>
@@ -108,7 +111,10 @@ export const Detail = () => {
                   </span>
                 </p>
               </div>
-              <button className="h-12 text-white w-24 rounded-3xl bg-black_custom font-bold font-nunito">
+              <button
+                onClick={() => getInbox(detailVariables.detailAnimal.uuid)}
+                className="h-12 text-white w-24 rounded-3xl bg-black_custom font-bold font-nunito"
+              >
                 Contact
               </button>
             </div>

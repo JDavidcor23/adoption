@@ -1,17 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useAuth } from "../hooks";
 import { Login, Overview, SignUp } from "../pages/publics";
 import { STORAGE, ROUTES } from "../utils/constants";
-import {
-  Detail,
-  Favorites,
-  Home,
-  Inbox,
-  Message,
-  Profile,
-} from "../pages/privates";
+import { PrivateRoutes } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export function AppRouter() {
   const { authVariables, authActions } = useAuth();
@@ -24,15 +18,15 @@ export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.INBOX} element={<Inbox />} />
-        <Route path={ROUTES.LOGIN} element={<Login />} />
-        <Route path={ROUTES.SIGNUP} element={<SignUp />} />
-        <Route path={ROUTES.PROFILE} element={<Profile />} />
-        <Route path={ROUTES.OVERVIEW} element={<Overview />} />
-        <Route path={ROUTES.FAVORITES} element={<Favorites />} />
-        <Route path={ROUTES.DETAIL_PARAMS} element={<Detail />} />
-        <Route path={ROUTES.MESSAGE_PARAMS} element={<Message />} />
+        {authVariables.isLoggedIn ? (
+          <Route path={ROUTES.REDIRECT} element={<PrivateRoutes />} />
+        ) : (
+          <Route path={ROUTES.REDIRECT} element={<PublicRoute />} />
+        )}
+        <Route
+          path={ROUTES.ERROR}
+          element={<Navigate to={ROUTES.OVERVIEW} replace />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -31,6 +31,7 @@ export const useAuth = () => {
       let newData = { ...data, profilePhoto };
       const resp = await request.signup(newData);
       localStorage.setItem(STORAGE.TOKEN, JSON.stringify(resp));
+      setTrue();
     } catch (error) {
       console.log(error);
     }
@@ -40,6 +41,15 @@ export const useAuth = () => {
     try {
       const resp = await request.login(data);
       localStorage.setItem(STORAGE.TOKEN, JSON.stringify(resp));
+      setTrue();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const logOut = () => {
+    try {
+      localStorage.removeItem(STORAGE.TOKEN);
+      setFalse();
     } catch (error) {
       console.log(error);
     }
@@ -48,6 +58,7 @@ export const useAuth = () => {
   //OBJ
   const authActions = {
     setTrue,
+    logOut,
     setFalse,
     singUp,
     login,

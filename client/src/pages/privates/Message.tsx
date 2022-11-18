@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { ROUTES, TYPE_ARROWS } from "../../utils/constants";
 import { Arrow } from "../../svg/Arrow";
+import { useDetail } from "../../hooks";
 
 export const Message = () => {
   const navigate = useNavigate();
+  const { detailVariables } = useDetail();
+
   const [conversations, setConversations] = useState<string[]>([]);
   const [text, setText] = useState("");
 
@@ -37,12 +40,12 @@ export const Message = () => {
         </div>
         <div className="flex flex-col items-center justify-center">
           <img
-            src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1667680854/2.0/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e_gstksx.jpg"
+            src={detailVariables?.chatUser?.profilePhoto}
             alt="profile_photo"
             className="border-solid border-4 h-24 object-cover w-24 border-cyan_custom rounded-full "
           />
           <h3 className="text-xl mx-0 my-2 font-bold text-black_custom font-nunito">
-            Juan Jesus
+            {detailVariables?.chatUser?.profileName}
           </h3>
         </div>
       </div>

@@ -1,13 +1,16 @@
 import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
 import { useFavorites } from "../../hooks";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 export const Favorites = () => {
   const { favoritesActions, favoritesVariables } = useFavorites();
+  const getFavoriteAnimalsCallback = useCallback(() => {
+    favoritesActions.getFavoriteAnimals();
+  }, [favoritesVariables.favoriteAnimals]);
 
   useEffect(() => {
-    favoritesActions.getFavoriteAnimals();
+    getFavoriteAnimalsCallback();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
