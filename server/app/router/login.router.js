@@ -1,9 +1,10 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import { nameRoutes } from "../constants/index.js";
+import { nameRoutes, responses } from "../constants/index.js";
 import USERS from "../data/users.json" assert { type: "json" };
 
 const router = express.Router();
+const code = Object.keys(responses);
 
 router.post(nameRoutes.DEFAULT, async (request, response) => {
   try {
@@ -16,7 +17,7 @@ router.post(nameRoutes.DEFAULT, async (request, response) => {
         response.json({ token, uuid: userExists.uuid });
       });
     } else {
-      response.status(403).json({ resp: "Invalid email or password" });
+      response.status(403).send({ error: { code: code[0] } });
     }
   } catch (error) {
     throw new Error(error);

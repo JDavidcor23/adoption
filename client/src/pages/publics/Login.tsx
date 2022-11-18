@@ -2,14 +2,12 @@ import { useAuth } from "../../hooks";
 import React, { useState } from "react";
 
 export const Login = () => {
-  // const { setAuth } = useAuth();
   const { authActions } = useAuth();
 
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
   const handleChange = (
     event: React.ChangeEvent<HTMLFormElement | HTMLInputElement>
   ) => {

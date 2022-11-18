@@ -1,16 +1,18 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import { nameRoutes } from "../constants/index.js";
+import { nameRoutes, responses } from "../constants/index.js";
 import { verifyToken } from "../middleware/middleware.js";
 import ANIMALS from "../data/animalsData.json" assert { type: "json" };
 
 const router = express.Router();
+const code = Object.keys(responses);
 
 router.get(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
     jwt.verify(request.token, "secretKey", (err, authData) => {
       if (err) {
-        response.status(403).json({ resp: "Invalidated credentials" });
+        response.status(403).json({ error: { code: code[1] } });
+
         return;
       }
       response.json(
@@ -34,7 +36,8 @@ router.get(nameRoutes.DEFAULT_ID, verifyToken, async (request, response) => {
   try {
     jwt.verify(request.token, "secretKey", (err, authData) => {
       if (err) {
-        response.status(403).json({ resp: "Invalidated credentials" });
+        response.status(403).json({ error: { code: code[1] } });
+
         return;
       }
       const { id } = request.params;

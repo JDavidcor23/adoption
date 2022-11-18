@@ -1,18 +1,20 @@
 import _ from "underscore";
 import express from "express";
-import { nameRoutes } from "../constants/index.js";
+import { nameRoutes, responses } from "../constants/index.js";
 import jwt from "jsonwebtoken";
 
 import { verifyToken } from "../middleware/middleware.js";
 import FAVORITES_ANIMALS from "../data/favoritesAnimals.json" assert { type: "json" };
 
 const router = express.Router();
+const code = Object.keys(responses);
 
 router.get(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
     jwt.verify(request.token, "secretKey", (err, authData) => {
       if (err) {
-        response.status(403).json({ resp: "Invalidated credentials" });
+        response.status(403).json({ error: { code: code[1] } });
+
         return;
       }
       const idUser = FAVORITES_ANIMALS.findIndex(
@@ -31,7 +33,8 @@ router.post(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
     jwt.verify(request.token, "secretKey", (err, authData) => {
       if (err) {
-        response.status(403).json({ resp: "Invalidated credentials" });
+        response.status(403).json({ error: { code: code[1] } });
+
         return;
       }
       const body = request.body;
@@ -67,7 +70,8 @@ router.delete(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
     jwt.verify(request.token, "secretKey", (err, authData) => {
       if (err) {
-        response.status(403).json({ resp: "Invalidated credentials" });
+        response.status(403).json({ error: { code: code[1] } });
+
         return;
       }
       const body = request.body;
@@ -78,7 +82,9 @@ router.delete(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
       });
       response.json(FAVORITES_ANIMALS);
     });
-  } catch (error) {}
+  } catch (error) {
+    throw new Error(error);
+  }
 });
 
 export { router };
