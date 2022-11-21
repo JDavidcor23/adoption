@@ -10,12 +10,12 @@ export const Inbox = () => {
 
   return (
     <>
-      <div className="  bg-pink_custom w-full min-h-screen">
+      <div className="  bg-pink_custom w-full min-h-91vh">
         <div className="p-5">
           <h2 className=" text-35px font-bold text-black_custom my-35px font-nunito text-center">
             Inbox
           </h2>
-          <div className="max-w-70% m-auto">
+          <div className="max-w-800px m-auto">
             <div
               className="bg-white flex items-center p-2 justify-between rounded-md cursor-pointer"
               onClick={() => navigate(ROUTES.MESSAGE)}

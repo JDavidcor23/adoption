@@ -4,6 +4,7 @@ import { Arrow } from "../../svg/Arrow";
 import { SvgDetail } from "../../svg/SvgDetail";
 import { useNavigate } from "react-router";
 import { ROUTES, DETAIL, TYPE_ARROWS } from "../../utils/constants";
+import { ButtonHeart } from "../../components/ButtonHeart";
 
 export const Detail = () => {
   const navigate = useNavigate();
@@ -45,9 +46,7 @@ export const Detail = () => {
                   </h3>
                   <SvgDetail type={detailVariables.detailAnimal.sex} />
                 </div>
-                <div className="flex items-center justify-center h-10 w-10 rounded-full shadow-heart cursor-pointer">
-                  <SvgDetail type={DETAIL.HEART} />
-                </div>
+                <ButtonHeart />
               </div>
               <div className="flex items-center justify-between mt-6">
                 <div className="flex">

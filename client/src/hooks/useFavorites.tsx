@@ -1,5 +1,5 @@
 import { ANIMALS_INTERFACE } from "../interfaces";
-import { setFavoriteAnimalsSlice } from "../slices";
+import { setFavoriteAnimalsSlice, setIsLoading } from "../slices";
 import { useDispatch, useSelector } from "react-redux";
 import * as request from "../utils/helper/axiosHelper";
 
@@ -26,19 +26,25 @@ export const useFavorites = () => {
 
   const postFavoriteAnimals = async (animal: ANIMALS_INTERFACE) => {
     try {
+      dispatch(setIsLoading(true));
       await request.postFavoriteAnimals(animal);
       favoritesActions.getFavoriteAnimals();
     } catch (error) {
       console.log(error);
+    } finally {
+      dispatch(setIsLoading(false));
     }
   };
 
   const deleteFavoriteAnimals = async (id: string) => {
     try {
+      dispatch(setIsLoading(true));
       await request.deleteFavoriteAnimals({ id });
       favoritesActions.getFavoriteAnimals();
     } catch (error) {
       console.log(error);
+    } finally {
+      dispatch(setIsLoading(false));
     }
   };
 

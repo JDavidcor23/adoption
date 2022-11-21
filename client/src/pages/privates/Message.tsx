@@ -7,7 +7,6 @@ import { useDetail } from "../../hooks";
 export const Message = () => {
   const navigate = useNavigate();
   const { detailVariables } = useDetail();
-
   const [conversations, setConversations] = useState<string[]>([]);
   const [text, setText] = useState("");
 
@@ -29,6 +28,7 @@ export const Message = () => {
       return;
     }
   };
+
   return (
     <div className="  bg-pink_custom w-full min-h-screen">
       <div className="bg-white p-5 relative">
@@ -51,9 +51,9 @@ export const Message = () => {
       </div>
       <div className="relative min-h-80vh flex flex-col  justify-end">
         <div className="flex flex-col items-end justify-end w-full">
-          {conversations?.map((p) => (
-            <p className="m-2 p-2 text-white bg-black_custom w-90% rounded-xl max-w-sm break-words">
-              {p}
+          {conversations?.map((m) => (
+            <p className="m-2 p-2 text-white bg-black_custom w-90% rounded-xl max-w-sm break-words text-xl flex flex-col">
+              {m}
             </p>
           ))}
         </div>

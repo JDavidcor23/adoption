@@ -15,7 +15,7 @@ export const Favorites = () => {
   }, []);
   return (
     <>
-      <div className=" bg-pink_custom w-full min-h-screen">
+      <div className=" bg-pink_custom w-full min-h-91vh">
         <div className="p-5">
           <h2 className=" text-35px font-bold text-black_custom my-35px font-nunito text-center">
             Favorite Pets

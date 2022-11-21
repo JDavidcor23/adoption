@@ -12,7 +12,8 @@ import { DETAIL } from "../../utils/constants";
 
 export const SvgDetail: React.FC<{
   type: string | undefined;
-}> = ({ type }) => {
+  fill?: string | undefined;
+}> = ({ type, fill }) => {
   switch (type) {
     case DETAIL.AGE:
       return <Age />;
@@ -33,7 +34,7 @@ export const SvgDetail: React.FC<{
     case DETAIL.CUDDLY:
       return <Cuddly />;
     case DETAIL.HEART:
-      return <Heart />;
+      return <Heart fill={fill} />;
     default:
       return <></>;
   }

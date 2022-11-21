@@ -9,6 +9,7 @@ import { PublicRoute } from "./PublicRoute";
 
 export function AppRouter() {
   const { authVariables, authActions } = useAuth();
+
   useEffect(() => {
     if (localStorage.getItem(STORAGE.TOKEN)) {
       authActions.setTrue();

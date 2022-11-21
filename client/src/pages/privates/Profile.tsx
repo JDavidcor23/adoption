@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
+import { LoaderButton } from "../../components/LoaderButton";
 import { Navbar } from "../../components/Navbar";
 import { useAuth } from "../../hooks";
 import { useUser } from "../../hooks/useUser";
 
 export const Profile = () => {
   const { userActions, userVariables } = useUser();
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -19,7 +21,7 @@ export const Profile = () => {
       [event?.target.name]: event?.target.value,
     });
   };
-  const { authActions } = useAuth();
+  const { authActions, authVariables } = useAuth();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     userActions.postUser({ ...userVariables?.user, ...user });
@@ -40,9 +42,9 @@ export const Profile = () => {
 
   return (
     <>
-      <div className="  bg-pink_custom w-full min-h-screen">
-        <div className="p-5">
-          <h2 className=" text-35px font-bold text-black_custom mx-0 my-2 font-nunito text-center">
+      <div className="  bg-pink_custom w-full min-h-91vh">
+        <div className="py-0 px-5">
+          <h2 className=" text-35px font-bold text-black_custom mx-0 py-2 font-nunito text-center">
             Profile
           </h2>
           <div className="flex flex-col items-center justify-center my-4 max-w-70% m-auto">
@@ -60,7 +62,7 @@ export const Profile = () => {
               </p>
             </div>
             <form
-              className="flex flex-col justify-center my-7 w-90%"
+              className="flex flex-col justify-center my-7 w-90% md:mt-0 md:max-w-2xl"
               onSubmit={handleSubmit}
             >
               <label htmlFor="" className="font-nunito">
@@ -96,8 +98,11 @@ export const Profile = () => {
                 placeholder="******************"
                 className="w-full my-3 h-8 rounded-sm border border-black py-1 px-2 font-nunito"
               />
-              <button className="h-12 text-white w-full rounded-3xl bg-black_custom font-bold my-2 font-nunito">
-                Save
+              <button
+                disabled={authVariables.isLoading}
+                className="h-12 text-white w-full rounded-3xl bg-black_custom font-bold my-2 font-nunito"
+              >
+                {authVariables.isLoading ? <LoaderButton /> : "Save"}
               </button>
               <button
                 className="h-12 text-white w-full rounded-3xl bg-black_custom font-bold my-2 font-nunito"

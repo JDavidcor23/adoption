@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { USER_INTERFACE } from "../interfaces";
-import { setUserSlice } from "../slices";
+import { setIsLoading, setUserSlice } from "../slices";
 import { STORAGE } from "../utils/constants";
 import * as request from "../utils/helper/axiosHelper";
 
@@ -28,11 +28,18 @@ export const useUser = () => {
   };
 
   const postUser = async (data: USER_INTERFACE) => {
-    const resp: AxiosResponse<RootState_POST_USER> = await request.postUser(
-      data
-    );
-    localStorage.setItem(STORAGE.TOKEN, JSON.stringify(resp));
-    getUser();
+    try {
+      dispatch(setIsLoading(true));
+      const resp: AxiosResponse<RootState_POST_USER> = await request.postUser(
+        data
+      );
+      localStorage.setItem(STORAGE.TOKEN, JSON.stringify(resp));
+      getUser();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(setIsLoading(false));
+    }
   };
 
   const userActions = {

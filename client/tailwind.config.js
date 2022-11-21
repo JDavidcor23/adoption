@@ -36,6 +36,7 @@ module.exports = {
       },
       minHeight: {
         "80vh": "80vh",
+        "91vh": "91vh",
       },
       height: {
         480: "480px",
@@ -50,6 +51,7 @@ module.exports = {
         "85%": "85%",
         70: "70px",
         "70%": "70%",
+        "800px": "800px",
         "84px": "84px",
       },
       animation: {
