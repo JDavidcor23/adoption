@@ -2,12 +2,10 @@ import { useEffect } from "react";
 import { useDetail, useFavorites } from "../../hooks";
 import { Arrow } from "../../svg/Arrow";
 import { SvgDetail } from "../../svg/SvgDetail";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 import { ROUTES, DETAIL, TYPE_ARROWS } from "../../utils/constants";
 
 export const Detail = () => {
-  const params = useParams();
-  const { id } = params;
   const navigate = useNavigate();
   const { favoritesActions } = useFavorites();
 
@@ -17,7 +15,6 @@ export const Detail = () => {
     navigate(ROUTES.MESSAGE);
   };
   useEffect(() => {
-    detailActions.getAnimalId(id);
     favoritesActions.getFavoriteAnimals();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

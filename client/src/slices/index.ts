@@ -6,3 +6,4 @@ export * from "./IsLoggedIn";
 export * from "./detailAnimal";
 export * from "./chatUserSlice";
 export * from "./favoriteAnimals";
+export * from "./isLoading";

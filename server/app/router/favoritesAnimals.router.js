@@ -1,90 +1,37 @@
-import _ from "underscore";
-import express from "express";
-import { nameRoutes, responses } from "../constants/index.js";
-import jwt from "jsonwebtoken";
-
-import { verifyToken } from "../middleware/middleware.js";
-import FAVORITES_ANIMALS from "../data/favoritesAnimals.json" assert { type: "json" };
+const express = require("express");
+const verifyToken = require("../middleware/verifyToken.handler.js");
+const nameRoutes = require("../constants/nameRoutes.constants.js");
+const {
+  verifyGlobalFunction,
+  getFavoritesAnimals,
+  postFavoritesAnimals,
+  deleteFavoritesAnimals,
+} = require("../functions");
 
 const router = express.Router();
-const code = Object.keys(responses);
 
 router.get(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
-    jwt.verify(request.token, "secretKey", (err, authData) => {
-      if (err) {
-        response.status(403).json({ error: { code: code[1] } });
-
-        return;
-      }
-      const idUser = FAVORITES_ANIMALS.findIndex(
-        (user) => user.uuid === authData.userExists.uuid
-      );
-      if (idUser >= 0) {
-        response.status(200).json(FAVORITES_ANIMALS[idUser].animals);
-      }
-    });
+    verifyGlobalFunction(request, response, getFavoritesAnimals);
   } catch (error) {
-    throw new Error(error);
+    response.send("Error");
   }
 });
 
 router.post(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
-    jwt.verify(request.token, "secretKey", (err, authData) => {
-      if (err) {
-        response.status(403).json({ error: { code: code[1] } });
-
-        return;
-      }
-      const body = request.body;
-      const idUser = FAVORITES_ANIMALS.findIndex(
-        (user) => user.uuid === authData.userExists.uuid
-      );
-      if (idUser >= 0) {
-        const isTheAnimalInFavorites = FAVORITES_ANIMALS[idUser].animals.some(
-          (animal) => animal.id === body.id
-        );
-        if (!isTheAnimalInFavorites) {
-          FAVORITES_ANIMALS[idUser].animals.push(body);
-          response.status(200).json(FAVORITES_ANIMALS);
-          return;
-        }
-        response.status(403).json({ resp: "the animal is already exists" });
-        return;
-      }
-
-      let data = {
-        uuid: authData.userExists.uuid,
-        animals: [body],
-      };
-      FAVORITES_ANIMALS.push(data);
-      response.status(200).json(FAVORITES_ANIMALS);
-    });
+    verifyGlobalFunction(request, response, postFavoritesAnimals);
   } catch (error) {
-    throw new Error(error);
+    response.send("Error");
   }
 });
 
 router.delete(nameRoutes.DEFAULT, verifyToken, async (request, response) => {
   try {
-    jwt.verify(request.token, "secretKey", (err, authData) => {
-      if (err) {
-        response.status(403).json({ error: { code: code[1] } });
-
-        return;
-      }
-      const body = request.body;
-      _.each(FAVORITES_ANIMALS, (d, i) => {
-        if (d.id == body.id) {
-          FAVORITES_ANIMALS.splice(i, 1);
-        }
-      });
-      response.json(FAVORITES_ANIMALS);
-    });
+    verifyGlobalFunction(request, response, deleteFavoritesAnimals);
   } catch (error) {
-    throw new Error(error);
+    response.send("Error");
   }
 });
 
-export { router };
+module.exports = router;

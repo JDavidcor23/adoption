@@ -1,5 +1,6 @@
 import user from "../slices/user";
 import animals from "../slices/animals";
+import isLoading from "../slices/isLoading";
 import IsLoggedIn from "../slices/IsLoggedIn";
 import chatUser from "../slices/chatUserSlice";
 import detailAnimal from "../slices/detailAnimal";
@@ -11,6 +12,7 @@ export const store = configureStore({
     user,
     animals,
     chatUser,
+    isLoading,
     IsLoggedIn,
     detailAnimal,
     favoriteAnimals,

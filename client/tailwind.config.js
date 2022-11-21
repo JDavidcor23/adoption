@@ -54,8 +54,10 @@ module.exports = {
       },
       animation: {
         loader: "loader 3.5s linear forwards",
+        loaderInfinite: "loaderInfinite 1s infinite forwards",
         button: "button 3.5s linear forwards",
         img: "img 2.5s alternate ease-in",
+        imgInfinite: "img 1s alternate infinite",
         sideContentPlus: "0.5s sideContentPlus linear",
         sideContentMinus: "0.5s sideContentMinus linear",
         sideAnimalContent: "1.5s sideAnimalContent linear",
@@ -74,6 +76,20 @@ module.exports = {
           "100%": {
             opacity: 0,
             visibility: "hidden",
+          },
+        },
+        loaderInfinite: {
+          "0%": {
+            opacity: 0.5,
+            visibility: "visible",
+          },
+          "85%": {
+            opacity: 0.5,
+            visibility: "visible",
+          },
+          "100%": {
+            opacity: 0.5,
+            visibility: "visible",
           },
         },
         button: {

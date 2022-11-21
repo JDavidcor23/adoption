@@ -2,7 +2,7 @@ import axios from "axios";
 import { STORAGE } from "../constants";
 
 const apiInstance = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL_DEV,
+  baseURL: "https://adoption-server.onrender.com/api/v1/",
 });
 
 apiInstance.interceptors.request.use(
@@ -25,7 +25,7 @@ apiInstance.interceptors.response.use(
     return response.data;
   },
   function (error) {
-    return Promise.reject(error.response.data);
+    return Promise.reject(error);
   }
 );
 export default apiInstance;

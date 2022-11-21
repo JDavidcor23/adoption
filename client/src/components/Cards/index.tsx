@@ -1,12 +1,21 @@
 import { ROUTES } from "../../utils/constants";
 import { useNavigate } from "react-router";
 import { ANIMALS } from "../../interfaces";
+import { useAuth, useDetail, useFavorites } from "../../hooks";
 
 export const Cards: React.FC<{
   animals: Array<ANIMALS>;
   class_name?: string;
 }> = ({ animals, class_name }) => {
+  const { favoritesActions } = useFavorites();
+  const { detailActions } = useDetail();
+
   const navigate = useNavigate();
+  const getAllDetail = async (id: string) => {
+    await detailActions.getAnimalId(id).then(() => {
+      navigate(`${ROUTES.DETAIL}${id}`);
+    });
+  };
 
   return (
     <div
@@ -17,7 +26,7 @@ export const Cards: React.FC<{
           <div
             key={animal.id}
             className="m-10px relative w-145px max-w-320px cursor-pointer md:w-40%"
-            onClick={() => navigate(`${ROUTES.DETAIL}${animal.id}`)}
+            onClick={() => getAllDetail(animal.id)}
           >
             <img
               src={animal.img}

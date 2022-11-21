@@ -1,14 +1,16 @@
-import { useHome } from "../../hooks";
+import { useAuth, useDetail, useHome } from "../../hooks";
 import { CATEGORIES } from "../../utils/constants";
 import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
 import { useCallback, useEffect } from "react";
+import { LoaderScream } from "../../components/LoaderScream";
 
 export const Home = () => {
   const { homeActions, homeData } = useHome();
   const getAnimals = useCallback(() => {
     homeActions.getAnimals();
   }, []);
+  const { authVariables } = useAuth();
 
   useEffect(() => {
     getAnimals();
@@ -17,7 +19,8 @@ export const Home = () => {
 
   return (
     <>
-      <main className=" bg-pink_custom w-full min-h-screen">
+      <main className=" bg-pink_custom w-full min-h-screen ">
+        {authVariables.isLoading && <LoaderScream />}
         <div className="p-5">
           <h2 className="text-35px font-bold text-black_custom my-35px font-nunito text-center">
             Adopt an adorable pet
