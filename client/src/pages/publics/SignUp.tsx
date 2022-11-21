@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useAuth } from "../../hooks";
 import React, { useState, useEffect } from "react";
-import { REQUIREMENTS, VALIDATE } from "../../utils/constants";
+import { REQUIREMENTS, ROUTES, VALIDATE } from "../../utils/constants";
 import { LoaderButton } from "../../components/LoaderButton";
+import { Link } from "react-router-dom";
 
 export const SignUp = () => {
   const { authActions, authVariables } = useAuth();
@@ -36,13 +37,13 @@ export const SignUp = () => {
   }, [user.password]);
 
   return (
-    <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col">
+    <div className="w-full min-h-screen bg-pink_custom flex items-center justify-center flex-col overflow-hidden">
       <img
         src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638104243/Adopcion/leonidasesteban.com_sfkukc.png"
         alt="Logo"
-        className="w-36"
+        className="w-36 animate-sideContentPlus"
       />
-      <div className="w-full max-w-xs">
+      <div className="w-full max-w-xs animate-sideContentPlus">
         <form
           className="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4"
           onSubmit={handleSubmit}
@@ -137,6 +138,13 @@ export const SignUp = () => {
             </button>
           </div>
         </form>
+        <Link
+          to={ROUTES.LOGIN}
+          className="text-2xl text-black_custom text-center w-11/12 animate-sideContentPlus flex justify-center m-auto"
+        >
+          Login
+          <span className=" text-purple-600 text-2xl ml-1"> here</span>
+        </Link>
       </div>
     </div>
   );

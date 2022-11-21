@@ -1,6 +1,8 @@
 import { useAuth } from "../../hooks";
 import React, { useState } from "react";
 import { LoaderButton } from "../../components/LoaderButton";
+import { ROUTES } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   const { authActions, authVariables } = useAuth();
@@ -97,6 +99,13 @@ export const Login = () => {
           </div>
         </form>
       </div>
+      <Link
+        to={ROUTES.SIGNUP}
+        className="text-2xl text-black_custom text-center w-11/12 animate-sideContentPlus"
+      >
+        Don't have an account?
+        <span className=" text-purple-600 text-2xl"> Create one here</span>
+      </Link>
     </div>
   );
 };
