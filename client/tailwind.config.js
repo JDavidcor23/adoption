@@ -47,12 +47,14 @@ module.exports = {
       },
       maxWidth: {
         "30rem": "30rem",
+        "490px": "490px",
         "320px": "320px",
         "85%": "85%",
         70: "70px",
         "70%": "70%",
         "800px": "800px",
         "84px": "84px",
+        "1000px": "1000px",
       },
       animation: {
         loader: "loader 3.5s linear forwards",

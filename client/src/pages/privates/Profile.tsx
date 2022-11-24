@@ -70,6 +70,7 @@ export const Profile = () => {
               </label>
               <input
                 type="text"
+                required
                 name="profileName"
                 onChange={handleChange}
                 value={user.profileName}
@@ -81,6 +82,7 @@ export const Profile = () => {
               </label>
               <input
                 type="text"
+                required
                 name="email"
                 value={user.email}
                 onChange={handleChange}
@@ -92,6 +94,7 @@ export const Profile = () => {
               </label>
               <input
                 type="password"
+                required
                 name="password"
                 onChange={handleChange}
                 value={user.password}
@@ -105,7 +108,7 @@ export const Profile = () => {
                 {authVariables.isLoading ? <LoaderButton /> : "Save"}
               </button>
               <button
-                className="h-12 text-white w-full rounded-3xl bg-black_custom font-bold my-2 font-nunito"
+                className="h-12 text-white w-full rounded-3xl bg-purple_custom font-bold my-2 font-nunito"
                 type="button"
                 onClick={authActions.logOut}
               >

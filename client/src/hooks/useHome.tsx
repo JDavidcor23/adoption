@@ -1,4 +1,4 @@
-import { setAnimalsSlice } from "../slices";
+import { setAnimalsSlice, setIsLoading } from "../slices";
 import { ANIMALS } from "../interfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { getAnimals as axiosGetAnimals } from "../utils/helper/axiosHelper";
@@ -22,9 +22,16 @@ export const useHome = () => {
   };
 
   const getAnimals = async () => {
-    const resp: AxiosResponse<ANIMALS[]> = await axiosGetAnimals();
-    dispatch(setAnimalsSlice(resp));
-    setAnimalsResp(resp);
+    try {
+      dispatch(setIsLoading(true));
+      const resp: AxiosResponse<ANIMALS[]> = await axiosGetAnimals();
+      dispatch(setAnimalsSlice(resp));
+      setAnimalsResp(resp);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(setIsLoading(false));
+    }
   };
 
   const homeActions = {

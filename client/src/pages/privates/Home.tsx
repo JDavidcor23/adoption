@@ -28,15 +28,19 @@ export const Home = () => {
           <p className="mb-4 text-2xl text-black_custom font-nunito text-center">
             Pet categories
           </p>
-          <div className="w-full m-auto flex">
+          <div className="flex justify-between my-0 mx-auto w-90% max-w-1000px">
             {CATEGORIES.map((pet) => (
               <div
-                className={`cursor-pointer flex items-center justify-between my-0 mx-auto w-full max-w-30rem first:mr-3 `}
+                className={`cursor-pointer flex items-center justify-between my-0 w-full  `}
                 key={pet.name}
                 onClick={() => homeActions.onSetTypePet(pet.name)}
               >
-                <div className="rounded-lg flex items-center flex-grow-0 h-24 my-0 p-2 top-0 left-0 text-white w-full bg-blue_1000">
-                  <div className="flex justify-center static top-2 left-2 bg-cyan_custom rounded-full w-35 max-h-84px max-w-84px">
+                <div
+                  className={`rounded-lg flex items-center flex-grow-0 h-24 my-0 p-2 top-0 left-0 text-white w-full bg-blue_1000 ${
+                    pet.name === "Cats" ? "ml-2" : "mr-2"
+                  }`}
+                >
+                  <div className="flex justify-center static top-2 left-2 bg-cyan_custom rounded-full w-35 max-h-84px max-w-84px ${}">
                     <img
                       src={pet.img}
                       alt={pet.name}
